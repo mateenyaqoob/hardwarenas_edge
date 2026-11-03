@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hwnas"
+version = "0.1.0"
+description = "Teaching toolkit: hardware-aware neural architecture search for edge devices"
+requires-python = ">=3.9"
+dependencies = ["numpy"]
+
+[project.scripts]
+hwnas = "hwnas.cli:main"
+
+[project.optional-dependencies]
+viz = ["matplotlib"]
+torch = ["torch", "torchvision"]
+dev = ["pytest", "matplotlib"]
+
+[tool.setuptools]
+packages = ["hwnas"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
